@@ -1,0 +1,641 @@
+/* GLOBAL  */
+:root {
+    --body-bg-color: rgb(0, 0, 0);
+    --project-card-bg-color: rgb(24, 24, 24);
+    --navbar-bg-color: rgb(6, 6, 6);
+    --nav-links-color: rgb(121, 121, 121);
+    --name-text-color: rgb(181, 181, 181);
+    --secondary-text-light: #666666;
+    --green-accents: rgb(0, 225, 0);
+    --font-ubunto-mono: "Ubunto Mono";
+    --font-montserrat: "Montserrat";
+    --font-noto-sans-mono: "Noto Sans Mono";
+}
+
+body {
+    background-color: var(--body-bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--nav-links-color);
+    font-family: var(--font-ubunto-mono);
+    font-weight: 700;
+    font-style: normal;
+}
+
+a.active {
+    color: white;
+}
+
+.navbar-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/*  HERO  */
+#home {
+    background-image: url("img/background.jpg");
+    font-family: var(--font-ubunto-mono);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    color: var(--name-text-color);
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+}
+
+.review-name {
+    color: white;
+    font-family: var(--font-noto-sans-mono);
+
+}
+
+.typing-text {
+    color: var(--secondary-text-light);
+}
+
+/*  PROJECTS  */
+#projects {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: var(--body-bg-color);
+}
+
+.my-project {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: var(--project-card-bg-color);
+}
+
+.project-title {
+    font-family: var(--font-montserrat);
+    color: white;
+}
+
+.project-desc {
+    color: var(--secondary-text-light);
+}
+
+.project-tech {
+    display: flex;
+}
+
+.tech-tag {
+    background-color: var(--secondary-text-light);
+    font-family: var(--font-montserrat);
+    color: white;
+    border: 1px solid var(--green-accents);
+}
+
+.project-view {
+    color: var(--secondary-text-light);
+}
+
+.view-preview {
+    color: var(--secondary-text-light);
+    font-family: var(--font-montserrat);
+}
+
+.part-of-page {
+    font-family: var(--font-montserrat);
+    text-align: center;
+    color: var(--secondary-text-light);
+}
+
+#testimonials {
+    background-color: var(--project-card-bg-color);
+}
+
+.stars-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.summary {
+    color: var(--name-text-color);
+    font-family: var(--font-montserrat);
+}
+
+.review {
+    color: var(--secondary-text-light);
+    font-family: var(--font-montserrat);
+}
+
+.review-date {
+    color: var(--secondary-text-light);
+    font-family: var(--font-montserrat);
+}
+
+.review-name {
+    font-family: var(--font-montserrat);
+}
+
+.card-container {
+    color: var(--secondary-text-light);
+}
+
+#description {
+    color: white;
+    background-color: var(--project-card-bg-color);
+}
+
+#description p {
+    font-family: var(--font-montserrat);
+}
+
+#interests-container {
+    background-color: var(--project-card-bg-color);
+}
+
+#contact-container {
+    color: white;
+}
+
+.contact-card {
+    background-color: var(--project-card-bg-color);
+    font-family: var(--font-montserrat);
+}
+
+.contact-card a {
+    font-family: var(--font-montserrat);
+}
+
+.desc-link {
+    text-decoration: none;
+    color: var(--nav-links-color);
+    padding: 0px;
+    transition: .2s ease-in-out;
+}
+
+.desc-link:hover {
+    color: var(--green-accents);
+}
+
+button {
+    color: var(--green-accents);
+    font-family: var(--font-ubunto-mono);
+    background-color: var(--project-card-bg-color);
+}
+
+/*---------------------------------------------*/
+/*   MOBILE QUERY 320px-480px   */
+@media (min-width: 320px) and (max-width: 480px) {
+
+    body {
+        margin: 15px 0 0 0;
+    }
+
+    a {
+        margin: 5px 0;
+        font-size: 1rem;
+        background-color: var(--project-card-bg-color);
+        border-radius: 4px;
+        padding: 7px;
+    }
+
+    .part-of-page {
+        margin: 3rem 0 1rem 0;
+    }
+
+    /*  NAVBAR */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .links.show {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 1.5rem;
+        width: auto;
+        padding: 20px 30px 5px 30px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-toggle-icon {
+        display: block;
+        width: 1rem;
+        height: 1px;
+        margin: 3px;
+        background-color: var(--nav-links-color);
+        border-radius: 2px;
+    }
+
+    /*  HERO  */
+    #home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        gap: 5px;
+        height: 30vh;
+        width: 100%;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /*Ensures children are close vertically*/
+    #home * {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /*  PROJECTS  */
+    #projects {
+        margin: 10px 0 10px 0;
+        padding: 10px;
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .my-project {
+        margin: .2rem;
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+    }
+
+    .project-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .project-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-desc {
+        font-family: var(--font-ubunto-mono);
+    }
+
+    .project-tech {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .tech-tag {
+        display: none;
+    }
+
+    .view-preview {
+        text-align: right;
+        padding: 5px;
+    }
+
+    #stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .toolkit-logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #testimonials {
+        padding: 1rem;
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 5px;
+    }
+
+    .summary {
+        font-size: 1rem;
+    }
+
+    .review {
+        font-size: 1rem;
+    }
+
+    .review-date {
+        font-size: .75rem;
+    }
+
+    #description {
+        padding: 1rem;
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 5px;
+    }
+
+    #interests-container {
+        padding: 1rem;
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 5px;
+        margin: 3px;
+        border-radius: 5px;
+    }
+
+    #contact-container {
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 5px;
+    }
+
+    .contact-card {
+        padding: 1rem;
+        margin: 1rem 0 1rem 0;
+        border-radius: 5px;
+    }
+}
+
+/*---------------------------------------------*/
+
+/*  TABLET QUERY 481px-768px*/
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: var(--navbar-bg-color);
+        border-radius: 5px;
+    }
+
+    .links {
+        display: flex;
+        justify-items: center;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: .5rem;
+    }
+
+    .part-of-page {
+        margin: 3rem 0 1rem 0;
+    }
+
+    /*  HERO  */
+    .hero-container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+
+    #home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        padding: 10px 10%;
+    }
+
+    #projects {
+        margin: 5px 0 5px 0;
+        padding: 10px;
+        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .my-project {
+        margin: .2rem;
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+    }
+
+    .project-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .project-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-desc {
+        font-family: var(--font-montserrat);
+    }
+
+    .project-tech {
+        flex-direction: row-reverse;
+        gap: 5px;
+    }
+
+    .tech-tag {
+        border-radius: 7px;
+        padding: 3px;
+        font-size: .75rem;
+    }
+
+    .view-preview {
+        text-align: right;
+        padding: 5px;
+    }
+
+    #stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 75px 0 75px;
+    }
+}
+
+/*  LAPTOP QUERY 769px-3000px  */
+@media (min-width: 769px) and (max-width: 3000px) {
+
+    /*  NAVBAR   */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: var(--navbar-bg-color);
+        border-radius: 5px;
+    }
+
+    .links {
+        display: flex;
+        justify-items: center;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: .5rem;
+    }
+
+    .part-of-page {
+        margin: 3rem 0 1rem 0;
+    }
+
+    /*  HERO  */
+    .hero-container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .name {
+        font-size: 4rem;
+    }
+
+    #home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        padding: 10px 10%;
+    }
+
+    /*  PROJECTS  */
+    #projects {
+        margin: 0 3rem 1rem 3rem;
+        padding: 10px;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .my-project {
+        margin: .2rem;
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+    }
+
+    .project-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .project-title h1 {
+        font-size: 2rem;
+    }
+
+    .project-desc {
+        font-family: var(--font-montserrat);
+    }
+
+    .project-tech {
+        flex-direction: row-reverse;
+        gap: 5px;
+    }
+
+    .tech-tag {
+        border-radius: 7px;
+        padding: 3px;
+        background-color: #151515;
+        font-family: var(--font-ubunto-mono);
+        color: var(--green-accents);
+        font-size: .75rem;
+    }
+
+    .view-preview {
+        text-align: right;
+        padding: 5px;
+    }
+
+    #stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 75px 0 75px;
+    }
+
+    .toolkit-logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #testimonials {
+        padding: 1rem;
+        margin: 0 3rem 1rem 3rem;
+        border-radius: 5px;
+    }
+
+    #description {
+        padding: 1rem;
+        margin: 0 3rem 1rem 3rem;
+        border-radius: 7px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    #description p {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+
+    #interests-container {
+        padding: 1rem;
+        margin: 0 3rem 1rem 3rem;
+        border-radius: 7px;
+    }
+
+    #interests-container button {
+        margin: .3rem;
+    }
+
+    #contact-container {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+        transition: .2s ease-in-out;
+    }
+
+    .contact-card:hover {
+        transform: scale(1.1);
+    }
+
+    .summary {
+        font-size: 1rem;
+    }
+
+    .review {
+        font-size: 1.2rem;
+    }
+
+    .name h3 {
+        font-size: 1.5 rem;
+        color: white;
+        font-family: var(--font-noto-sans-mono);
+    }
+}
